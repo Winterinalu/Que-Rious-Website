@@ -10,8 +10,6 @@ import walletIcon from './assets/Images/Download App (8) 2.png'
 import phoneScreen from './assets/Images/phone.png'
 import './App.css'
 
-const githubUrl = 'https://github.com'
-
 const appDownloads = [
   {
     id: 'passenger-app',
@@ -19,7 +17,7 @@ const appDownloads = [
     description: 'Reserve seats, choose a pickup stop, and follow your vehicle along a fixed route.',
     features: ['Check seat availability and choose a pickup stop', 'Follow live vehicle GPS and forecast ETAs', 'Pay a 50% deposit and scan QR for check-in', 'Ask the commuter assistant about schedules and pricing'],
     icon: seatIcon,
-    downloadUrl: null,
+    downloadUrl: 'https://github.com/Winterinalu/Que-Rious-Website/releases/download/1.0.0/Queue-Rious-Passenger.apk',
   },
   {
     id: 'driver-app',
@@ -27,7 +25,7 @@ const appDownloads = [
     description: 'Manage an assigned fixed route and track passengers waiting at their pickup points.',
     features: ['View assigned fixed routes and active trips', 'Track passenger pickup locations in real time', 'Anticipate stops from booked passenger locations', 'Coordinate pickups along the assigned route'],
     icon: locationIcon,
-    downloadUrl: null,
+    downloadUrl: 'https://github.com/Winterinalu/Que-Rious-Website/releases/download/1.0.0/Queue-Rious-Driver.apk',
   },
 ]
 
@@ -80,11 +78,13 @@ const projectLimitations = [
 ]
 
 const projectTeam = [
-  'Acupan, Riyanne Franczesca F.',
-  'Andulan, Robert Joniel C.',
-  'Bulan, Jony Chen B.',
-  'Lerio, Wendelyn',
-  'Pedriña, Princess Diana A.',
+  { name: 'Acupan, Riyanne Franczesca F.', role: 'PM' },
+  { name: 'Andulan, Robert Joniel C.' },
+  { name: 'Balagot, Jhustin Carl B.' },
+  { name: 'Bartolata, Ronald Andrei I.' },
+  { name: 'Bulan, Jony Chen B.' },
+  { name: 'Lerio, Wendelyn' },
+  { name: 'Pedriña, Princess Diana A.' },
 ]
 
 function BrandMark() {
@@ -151,11 +151,11 @@ function DownloadQrDialog({ app, onClose }) {
       </form>
       <span className="section-tag">{app.name}</span>
       <h2 id="download-qr-title">Scan to get the app</h2>
-      <p>This temporary QR opens GitHub. Replace its destination with the {app.name.toLowerCase()} APK release link when available.</p>
-      <a className="dialog-qr-link" href={githubUrl} target="_blank" rel="noreferrer" aria-label="Open GitHub in a new tab">
-        <DownloadQr value={githubUrl} />
+      <p>Scan the QR code to download the {app.name.toLowerCase()} APK.</p>
+      <a className="dialog-qr-link" href={app.downloadUrl} target="_blank" rel="noreferrer" aria-label={`Download the ${app.name} APK`}>
+        <DownloadQr value={app.downloadUrl} />
       </a>
-      <a className="dialog-github-link" href={githubUrl} target="_blank" rel="noreferrer">Open GitHub</a>
+      <a className="dialog-github-link" href={app.downloadUrl} target="_blank" rel="noreferrer">Download {app.name} APK</a>
     </dialog>
   )
 }
@@ -294,7 +294,12 @@ function App() {
             <div className="team-roster">
               <h3>Project team</h3>
               <ol>
-                {projectTeam.map((member) => <li key={member}>{member}</li>)}
+                {projectTeam.map((member) => (
+                  <li className={member.role === 'PM' ? 'is-project-manager' : undefined} key={member.name}>
+                    {member.name}
+                    {member.role && <span className="team-role-badge" aria-label="Project Manager" title="Project Manager">{member.role}</span>}
+                  </li>
+                ))}
               </ol>
             </div>
             <div className="team-adviser">
@@ -310,7 +315,7 @@ function App() {
             <span className="section-tag">Application Portal</span>
             <h2 id="downloads-title">Get the apps</h2>
             <span className="heading-rule" aria-hidden="true" />
-            <p className="portal-intro">Select the app for your role. Download links will be published here when the application builds are ready.</p>
+            <p className="portal-intro">Select your role to download the Passenger or Driver app APK.</p>
           </div>
           <div className="download-app-grid">
             {appDownloads.map((app) => (
@@ -325,7 +330,7 @@ function App() {
                     {app.features.map((feature) => <li key={feature}>{feature}</li>)}
                   </ul>
                   {app.downloadUrl ? (
-                    <a className="button download-action" href={app.downloadUrl}>Download {app.name}</a>
+                    <a className="button download-action" href={app.downloadUrl}>Download {app.name} APK</a>
                   ) : (
                     <button className="button download-action is-unavailable" type="button" disabled>Download link coming soon</button>
                   )}

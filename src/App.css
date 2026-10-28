@@ -1098,6 +1098,26 @@
   line-height: 1.8;
 }
 
+.team-roster li.is-project-manager {
+  padding-inline: 8px;
+  border-radius: 6px;
+  background: #f7e3e3;
+  color: var(--red-dark);
+  font-weight: 600;
+}
+
+.team-role-badge {
+  margin-left: 9px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+
 .team-adviser {
   padding-left: 24px;
   border-left: 2px solid var(--red);
