@@ -17,7 +17,7 @@ const appDownloads = [
     description: 'Reserve seats, choose a pickup stop, and follow your vehicle along a fixed route.',
     features: ['Check seat availability and choose a pickup stop', 'Follow live vehicle GPS and forecast ETAs', 'Pay a 50% deposit and scan QR for check-in', 'Ask the commuter assistant about schedules and pricing'],
     icon: seatIcon,
-    downloadUrl: 'https://github.com/Winterinalu/Que-Rious-Website/releases/download/1.0.0/Queue-Rious-Passenger.apk',
+    downloadUrl: 'https://github.com/Winterinalu/Que-Rious-Website/releases/download/1.0.1/Queue-Rious-Passenger.apk',
   },
   {
     id: 'driver-app',
@@ -25,7 +25,7 @@ const appDownloads = [
     description: 'Manage an assigned fixed route and track passengers waiting at their pickup points.',
     features: ['View assigned fixed routes and active trips', 'Track passenger pickup locations in real time', 'Anticipate stops from booked passenger locations', 'Coordinate pickups along the assigned route'],
     icon: locationIcon,
-    downloadUrl: 'https://github.com/Winterinalu/Que-Rious-Website/releases/download/1.0.0/Queue-Rious-Driver.apk',
+    downloadUrl: 'https://github.com/Winterinalu/Que-Rious-Website/releases/download/1.0.1/Queue-Rious-Driver.apk',
   },
 ]
 
