@@ -1,5 +1,7 @@
 import qrcode from 'qrcode-generator'
 import { useEffect, useRef, useState } from 'react'
+import queueWordmark from './assets/Images/Queue.png'
+import brandLogo from './assets/Images/logo.png'
 import busScene from './assets/Images/Download App (10) 1.png'
 import seatIcon from './assets/Images/Download App (5) 2.png'
 import locationIcon from './assets/Images/Download App (6) 2.png'
@@ -88,13 +90,15 @@ const projectTeam = [
 function BrandMark() {
   return (
     <span className="brand-mark" aria-hidden="true">
-      <svg viewBox="0 0 48 48" focusable="false">
-        <circle cx="24" cy="25" r="17" />
-        <path d="M13 27V19.5A3.5 3.5 0 0 1 16.5 16h15a3.5 3.5 0 0 1 3.5 3.5V27H13Z" />
-        <path d="M16 21h6v4h-6zm10 0h6v4h-6zM16 29h16m-13 3v2m10-2v2" />
-        <path d="M18 9.5a9 9 0 0 1 12 0M21 12.5a4.5 4.5 0 0 1 6 0" />
-        <path d="m25 39 5-1.5" />
-      </svg>
+      <img src={brandLogo} alt="" />
+    </span>
+  )
+}
+
+function BrandWordmark() {
+  return (
+    <span className="brand-wordmark" aria-hidden="true">
+      <img src={queueWordmark} alt="" />
     </span>
   )
 }
@@ -174,7 +178,7 @@ function App() {
       <header className="site-header" id="home">
         <a className="brand" href="#home" aria-label="Queue-rious home">
           <BrandMark />
-          <span className="brand-name">QUEUE-RIOUS<span className="brand-signal">◌</span></span>
+          <BrandWordmark />
         </a>
         <nav className="main-nav" aria-label="Main navigation">
           <a className="nav-link" href="#passenger-app">Passenger App</a>
@@ -354,7 +358,7 @@ function App() {
           <div className="footer-identity">
             <a className="brand" href="#home" aria-label="Queue-rious home">
               <BrandMark />
-              <span className="brand-name">QUEUE-RIOUS<span className="brand-signal">◌</span></span>
+              <BrandWordmark />
             </a>
             <p>IoT-Driven Transit and Seat Reservation System</p>
             <p className="footer-school">University of Caloocan City<br />Computer Studies Department</p>

@@ -60,24 +60,29 @@
 .confirmation-brand-mark {
   width: 42px;
   height: 42px;
+  position: relative;
   display: grid;
   place-items: center;
-  border: 1.5px solid #b9080b;
-  border-radius: 50%;
+  overflow: hidden;
 }
 
-.confirmation-brand-mark svg {
-  width: 34px;
-  height: 34px;
-  fill: none;
-  stroke: #b9080b;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.7;
+.confirmation-brand-mark img {
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  top: 0;
+  max-width: none;
 }
 
-.confirmation-brand-mark svg path:nth-of-type(1) {
-  fill: #fff;
+.confirmation-brand .brand-wordmark {
+  width: 140px;
+  height: 19px;
+}
+
+.confirmation-brand .brand-wordmark img {
+  width: 159px;
+  top: -53px;
+  left: -17px;
 }
 
 .confirmation-content {

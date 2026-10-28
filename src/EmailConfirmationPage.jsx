@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
+import queueWordmark from './assets/Images/Queue.png'
+import brandLogo from './assets/Images/logo.png'
 import busScene from './assets/Images/Download App (10) 1.png'
 import './EmailConfirmationPage.css'
 
@@ -90,14 +92,11 @@ function EmailConfirmationPage() {
       <div className="confirmation-wrap">
         <a className="confirmation-brand" href="/" aria-label="Queue-rious home">
           <span className="confirmation-brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 48 48" focusable="false">
-              <circle cx="24" cy="25" r="17" />
-              <path d="M13 27V19.5A3.5 3.5 0 0 1 16.5 16h15a3.5 3.5 0 0 1 3.5 3.5V27H13Z" />
-              <path d="M16 21h6v4h-6zm10 0h6v4h-6zM16 29h16m-13 3v2m10-2v2" />
-              <path d="M18 9.5a9 9 0 0 1 12 0M21 12.5a4.5 4.5 0 0 1 6 0" />
-            </svg>
+            <img src={brandLogo} alt="" />
           </span>
-          <span>QUEUE-RIOUS</span>
+          <span className="brand-wordmark" aria-hidden="true">
+            <img src={queueWordmark} alt="" />
+          </span>
         </a>
 
         {status === 'confirmed' && account.role === 'passenger' && (

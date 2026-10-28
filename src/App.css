@@ -22,37 +22,35 @@
 .brand-mark {
   width: 58px;
   height: 58px;
+  position: relative;
   display: grid;
   place-items: center;
-  border: 2px solid var(--red);
-  border-radius: 50%;
+  overflow: hidden;
 }
 
-.brand-mark svg {
-  width: 46px;
-  height: 46px;
-  fill: none;
-  stroke: var(--red);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.7;
+.brand-mark img {
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  top: 0;
+  max-width: none;
 }
 
-.brand-mark svg path:nth-of-type(1) {
-  fill: #fff;
+.brand-wordmark {
+  width: 176px;
+  height: 24px;
+  position: relative;
+  flex: 0 0 auto;
+  overflow: hidden;
 }
 
-.brand-name {
-  font-size: 21px;
-  font-weight: 850;
-  letter-spacing: 0;
-}
-
-.brand-signal {
-  display: inline-block;
-  margin-left: 3px;
-  font-size: 18px;
-  transform: rotate(40deg);
+.brand-wordmark img {
+  width: 200px;
+  max-width: none;
+  position: absolute;
+  top: -67px;
+  left: -21px;
+  filter: brightness(0) saturate(100%) invert(9%) sepia(83%) saturate(4713%) hue-rotate(351deg) brightness(90%) contrast(117%);
 }
 
 .main-nav {
@@ -416,15 +414,6 @@
     height: 58px;
   }
 
-  .brand-mark svg {
-    width: 48px;
-    height: 48px;
-  }
-
-  .brand-name {
-    font-size: 21px;
-  }
-
   .main-nav {
     gap: 48px;
   }
@@ -531,13 +520,20 @@
     height: 42px;
   }
 
-  .brand-mark svg {
-    width: 34px;
-    height: 34px;
+  .brand-mark img {
+    width: 56px;
+    height: 56px;
   }
 
-  .brand-name {
-    font-size: 15px;
+  .brand-wordmark {
+    width: 136px;
+    height: 18px;
+  }
+
+  .brand-wordmark img {
+    width: 155px;
+    top: -52px;
+    left: -16px;
   }
 
   .main-nav {
@@ -1227,16 +1223,8 @@
   color: #fff;
 }
 
-.site-footer .brand-mark {
-  border-color: #ff9b9e;
-}
-
-.site-footer .brand-mark svg {
-  stroke: #ff9b9e;
-}
-
-.site-footer .brand-name {
-  color: #fff;
+.site-footer .brand-wordmark img {
+  filter: none;
 }
 
 .footer-identity > p,
@@ -1568,10 +1556,6 @@
   .main-nav .button-small {
     padding-inline: 8px;
     font-size: 9px;
-  }
-
-  .brand-name {
-    font-size: 14px;
   }
 
   .project-overview {
